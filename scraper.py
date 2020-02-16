@@ -2,7 +2,7 @@ import requests
 import json
 import pandas as pd
 
-# Replace it with the path of the folder
+# Replace it with the path of the folder that contains this project.
 path = '/Users/ZiyuChen/assignment/'
 
 def index():
