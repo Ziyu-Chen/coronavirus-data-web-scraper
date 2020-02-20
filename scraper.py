@@ -23,7 +23,7 @@ def index():
     foreign_countries = get_array('"overseasList":', text)
     foreign_countries_df = pd.DataFrame(foreign_countries)[['name', 'conNum', 'cureNum', 'deathNum', 'susNum']]
     foreign_countries_df.columns = ['国家', '累计确诊人数', '治愈人数', '死亡人数', '疑似病例']
-    foreign_countries_df.to_csv(path + '疫情实时动态爬虫/外国数据（国别）/' + timestamp + '.csv')
+    foreign_countries_df.to_csv(path + 'coronavirus-data-web-scraper/外国数据（国别）/' + timestamp + '.csv')
 
     # Get domestic data
     provinces = get_array('"domesticList":', text)
@@ -32,7 +32,7 @@ def index():
     cities = unravel(provinces)
     cities_df = pd.DataFrame(cities)[['province_name', 'name', 'conNum', 'cureNum', 'deathNum', 'susNum']]
     cities_df.columns = ['省', '市', '累计确诊人数', '治愈人数', '死亡人数', '疑似病例']
-    cities_df.to_csv(path + '疫情实时动态爬虫/中国数据（市别）/' + timestamp + '.csv')
+    cities_df.to_csv(path + 'coronavirus-data-web-scraper/中国数据（市别）/' + timestamp + '.csv')
 
 
 def get_string(signal, text):
